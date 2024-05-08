@@ -34,6 +34,9 @@ You will find here:
          6. Basic goodies, like autopairs, blank indent with animation, basic dashboard (with colourscheme picker, etc) -- all powered by mini, hehe;
          7. Basic autocmds, including couple of tweaks made for Leap (to make <CR> jumping work better for me) and some for Kitty (using dynamic padding feature, works with included config file);
 
+         + Everything is lazy loaded at the appropriate moments, so don't touch anything or it will break lol. It is optimized heavily for performance.
+         + The actual startup time is on avg about 20ms with all the plugins.
+
 
 5. CREDITS
 
