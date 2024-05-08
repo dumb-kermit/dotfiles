@@ -1,7 +1,7 @@
 return {
 	{
 		"itchyny/lightline.vim",
-		enabled = false,
+		lazy = false,
         event = "VeryLazy",
 		setup = function()
 			require("lightline").setup()
@@ -9,7 +9,7 @@ return {
 	},
 	{
 		"nvim-lualine/lualine.nvim",
-		lazy = true,
+		enabled = false,
         event = "VeryLazy",
 		config = function()
 			require("lualine").setup({

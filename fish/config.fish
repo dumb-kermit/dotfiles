@@ -28,7 +28,7 @@ alias kss='kitty-sesh ss00'
 
 set theme_gruvbox dark soft
 alias gogh='bash -c  "$(curl -sLo- https://git.io/vQgMr)"'
-set -U Z_CMD z
+#set -U Z_CMD z
 set -gx EDITOR nvim
 # Emulates vim's cursor shape behavior
 # Set the normal and visual mode cursors to a block
@@ -83,6 +83,13 @@ set -l color0D '#42be65'
 set -l color0E '#be95ff'
 set -l color0F '#82cfff'
 
+function saveKittySession
+   kitty @ ls | ~/.local/bin/kiss
+   cp /tmp/kitty-sesison.kitty ~/.config/kitty/kitty-session.kitty
+end
+
+alias sks=saveKittySession  
+
 fzf_configure_bindings --variables=\e\[47\;9u
 # set --export FZF_DEFAULT_OPTS '--cycle --height=40% --preview-window=wrap --marker="*" --pointer="⏺" --separator="─" --scrollbar="" --prompt="􀊫 " --color=prompt:#c4746e --color=marker:#c4746e --color=bg:#000000 --color=fg:#d0d0d0 --color=header:#8a9a7b --color=pointer:#c4746e --color=label:#aeaeae --color=bg+:#000000 --color=fg+:#c4746e --color=query:#c4746e --color=hl:#c4746e --color=hl+:#c4746e --color=border:#DCD7BA --layout=reverse'
 # export FZF_DEFAULT_OPTS_FILE=/Users/gurgen/.config/fish/fesh.fzfrc
@@ -90,4 +97,4 @@ fzf_configure_bindings --variables=\e\[47\;9u
 # set --export FZF_DEFAULT_OPTS '--cycle --height=40% --preview-window=wrap --marker="*" --pointer="⏺" --separator="─" --scrollbar="" --prompt="􀊫 " --color=prompt:$color0A --color=marker:#DE717C --color=bg:#121C2D --color=fg:#7DF9CA --color=header:#FF9900 --color=pointer:#DE717C --color=label:#7DF9CA --color=bg+:#121C2D --color=fg+:#7DF9CA --color=query:#DE717C --color=hl:#DE717C --color=hl+:#DE717C --color=border:#121C2D --layout=reverse'
 #
 set --export FZF_DEFAULT_OPTS '--cycle --height=40% --preview-window=wrap --marker="*" --pointer="⏺" --separator="─" --scrollbar="" --prompt="􀊫 " --color=bg+:#262626 --color=bg:#161616 --color=spinner:#ff7eb6 --color=hl:#42be65 --color=fg:#dde1e6 --color=header:#42be65 --color=info:#ee5396 --color=pointer:#ff7eb6 --color=marker:#ff7eb6 --color=fg+:#fffff0 --color=prompt:#ee5396 --color=hl+:#42be65'
-export PATH="$PATH:$HOME/.local/bin"
+# export PATH="$PATH:$HOME/.local/bin"

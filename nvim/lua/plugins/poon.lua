@@ -1,7 +1,7 @@
 return {
     {
         "ThePrimeagen/harpoon",
-        enabled = false,
+        -- enabled = false,
         lazy = true,
         keys = {{"<leader>"}},
         branch = "harpoon2",

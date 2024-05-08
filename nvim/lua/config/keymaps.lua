@@ -20,11 +20,13 @@ map("n", "<D-a>", "<C-w>x", { desc = "TOGGLE PANE" })
 map("n", "<leader>c", ":bd<CR>", { desc = "BUFF EXIT"})
 
 --menu--
-map("n", "<leader>d", "<cmd>lua MiniStarter.open()<CR>", { desc = "TOGGLE DASH" })
+--map("n", "<leader>d", "<cmd>lua MiniStarter.open()<CR>", { desc = "TOGGLE DASH" })
+map("n", "<leader>d", "<cmd>lua MiniSessions.select()<CR>", { desc = "SESSION SELECT" })
 map("n", "<leader>j", "<cmd>lua MiniNotify.show_history()<CR>", { desc = "TOGGLE HISTORY" })
 map("n", "<S-p>", "<cmd>Lazy profile<CR>", { desc = "TOGGLE PROFILER" })
 map('n', '<leader>l', '<cmd>Lazy<CR>', { desc = 'TOGGLE LAZY' })
 map("n", "<C-q>", "<cmd>q<CR>", { desc = "TOGGLE QUIT" })
+map("n", "<leader>p", "<cmd>lua MiniSessions.write('ss00')<CR>", { desc = "SESSION SAVE" })
 --map("n", '`', "<cmd>lua require('which-key').show('`', {mode = 'n', auto = true})<CR>", { desc = "TOGGLE MARKS" })
 
 --telescope--

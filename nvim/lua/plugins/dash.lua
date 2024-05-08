@@ -1,7 +1,7 @@
 return {
 	{
 		"echasnovski/mini.starter",
-		version = false, -- wait till new 0.7.0 release to put it back on semver
+		enabled = false, -- wait till new 0.7.0 release to put it back on semver
 		lazy = false,
        --  event = "VeryLazy",
 		--  event = "VimEnter",
@@ -52,6 +52,7 @@ return {
 					new_section("KANAGAWA WAVE", "colorscheme kanagawa", "TRUE COLORS"),
 					new_section("KANAGAWA DRAGON", "colorscheme kanagawa-dragon", "TRUE COLORS"),
 				--	new_section("DOOM-ONE", "colorscheme doom-one", "TRUE COLORS"),
+                    starter.sections.sessions(2, true),
 					new_section("TOGGLE LAZY", "Lazy", "NEOVIM"),
 					new_section("TOGGLE QUIT", "quit!", "NEOVIM"),
 				},

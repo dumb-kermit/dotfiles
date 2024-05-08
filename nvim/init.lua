@@ -11,6 +11,9 @@ require("lazy_conf")
 require("options")
 require("keymaps")
 require("config.style")
+require("mini.sessions").setup({
+    autoread = true
+})
 require("mini.notify").setup({
     window = {
         winblend = 0
@@ -18,7 +21,7 @@ require("mini.notify").setup({
 })
 vim.notify = require('mini.notify').make_notify()
 require("mini.cursorword").setup()
--- require('mini.indentscope').gen_animation.quadratic({ easing = 'out', duration = 1000, unit = 'total' })
+--require('mini.indentscope').gen_animation.quadratic({ easing = 'out', duration = 1000, unit = 'total' })
 --local gen_animation = require('miniindentscope.gen_animation')
 local MiniIndentscope = require('mini.indentscope')
 require("mini.indentscope").setup({

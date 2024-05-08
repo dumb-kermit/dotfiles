@@ -7,6 +7,13 @@ return {
     end,
   },
 {
+    "echasnovski/mini.sessions", version = false,
+        lazy = false,
+        setup = function()
+            require('mini.sessions').setup()
+        end
+},
+{
     'echasnovski/mini.indentscope', lazy = false,
     event = 'VeryLazy',
     setup = function()

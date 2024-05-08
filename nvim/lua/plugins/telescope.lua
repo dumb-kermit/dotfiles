@@ -102,13 +102,14 @@ return {
 					prompt_position = "bottom",
 					prompt_prefix = " • ",
 					selection_caret = " • ",
-					entry_prefix = "   ",
+          entry_prefix = " • ",
+					--entry_prefix = "   ",
           --entry_prefix = " ・ ",
 					path_display = shorten,
 					color_devicons = false,
 					layout_strategy = "horizontal",
 					layout_config = {
-						height = 32.0,
+						width = 60.0,
 					},
 				},
 				-- You can put your default mappings / updates / etc. in here

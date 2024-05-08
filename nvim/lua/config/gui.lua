@@ -7,7 +7,12 @@
 --vim.o.guifont = "Kode Mono:h16:#e-subpixelantialias:#h-full:b"
 -- vim.o.guifont = "M+CodeLat60 Nerd Font Mono:b:h16"
 -- vim.o.guifont = "Source Code Pro for Powerline:h17"
-vim.o.guifont = "BitstromWera Nerd Font:b:h17"
+--vim.o.guifont = "BitstromWera Nerd Font:b:h17"
+--vim.o.guifont = "Hack Nerd Font:b:h17"
+
+vim.o.guifont = "VictorMono Nerd Font Mono:b:h17"
+--vim.o.guifont = "Operator Mono:b:h18"
+
 -- vim.o.guifont = "Terminess Nerd Font Propo:b:h19"
 -- vim.o.guifont = "GeistMono Nerd Font Propo:h800:h17"
 -- vim.o.guifont = "Victor Mono:b:h18"
@@ -23,6 +28,14 @@ vim.o.guifont = "BitstromWera Nerd Font:b:h17"
 -- vim.o.guifont = "Liga SFMono Nerd Font Heavy:h16:#e-antialias:#h-full"
 -- vim.o.guifont = "SF Mono:b:h16:#e-antialias:#h-none"
 -- vim.o.guifont = "MonoLisa:h17"
+--
+--
+--if vim.g.neovide then
+--    vim.cmd 'colorscheme falcon'
+--    vim.g.lightline = {
+--	colorscheme = "falcon",
+--    } 
+--end
 vim.g.neovide_padding_top = 18
 vim.g.neovide_padding_bottom = 1
 vim.g.neovide_padding_left = 8
@@ -40,8 +53,8 @@ vim.g.neovide_underline_stroke_scale = 1.2
 vim.g.neovide_cursor_vfx_particle_phase = 9400.5
 vim.g.neovide_cursor_vfx_particle_curl = 2.05
 vim.g.neovide_cursor_vfx_opacity = 780.0
-vim.g.neovide_cursor_vfx_particle_density = 442.0
-vim.g.neovide_cursor_vfx_particle_lifetime = 1.4
+vim.g.neovide_cursor_vfx_particle_density = 842.0
+vim.g.neovide_cursor_vfx_particle_lifetime = 1.6
 -- vim.g.neovide_cursor_vfx_particle_density = 400
 -- vim.g.neovide_cursor_vfx_particle_lifetime = 3.4
 vim.opt.linespace = 1
