@@ -1,4 +1,5 @@
 # dotfiles
+![image](https://github.com/dumb-kermit/dotfiles/assets/161794036/fd456824-a253-4ec2-a0b2-78cfcdf348fe)
 
 
 1. WELCOME
