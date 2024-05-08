@@ -24,8 +24,16 @@ You will find here:
 2. Fish config -- very basic, just minor aliases and stuff. I use z for jumps on 'z' and fzf for everything with fpp for cd's -- hence aliases for that in the config. Also including custom colorscheme for that as well.
 
 3. NVIM config -- complete package, just drop all the files from 'nvim' folder from the repo into your own ~/.config/nvim and let it sync up -- enjoy. I am using custom 'Moonbow' colorscheme and I love it so much (it's a banger, as if Ayu and Gruvbox had a baby lol) -- I've ported it to Kitty and Fish (both are included here in their respective folders).
+     3.1 THE SETUP
+         1. Completely functional LSP setup;
+         2. Telescope setup with File Browser and IMAGE PREVIEWS inside (for Kitty, works only there);
+         3. Autocompletions, suggestions, snippets, etc;
+         4. Customized colorscheme to match the terminal & shell;
+         5. Leap for advanced motions (jump inside the BUF with <CR>);
+         6. Basic goodies, like autopairs, blank indent with animation, basic dashboard (with colourscheme picker, etc) -- all powered by mini, hehe;
+         7. Basic autocmds, including couple of tweaks made for Leap (to make <CR> jumping work better for me) and some for Kitty (using dynamic padding feature, works with included config file);
 
 
-4. CREDITS
+5. CREDITS
 
-Colorscheme - https://github.com/arturgoms/moonbow.nvim?tab=readme-ov-file - credit, where the credit is due, sweet job.
+COLORS - https://github.com/arturgoms/moonbow.nvim?tab=readme-ov-file - credit, where the credit is due, sweet job.
