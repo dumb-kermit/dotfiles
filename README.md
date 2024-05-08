@@ -10,7 +10,7 @@ Welcome to this wonderful repo - a grand amalgamation of months of work, dedicat
 
 2. GOALS
 
-The goal is -- to get to the point, where it is just 'good enough' that I feel like it is OKAY to leave out any minor tweaks 'for now' and focus on actual work and studying - so basically, a setup that is good enough, that until I get to a next milestone in my coding adventure -- it's good serve me well and good, in fact up to the point of complete satisfaction and even more, I love this setup, lol <3
+The goal is -- to get to the point, where it is just 'good enough' that I feel like it is OKAY to leave out any minor tweaks 'for now' and focus on actual work and studying - so basically, a setup that is good enough, that until I get to a next milestone in my coding adventure -- it's good to serve me well, in fact right now, it is up to the point of complete satisfaction and even more, I damn love this setup, lol <3
 
 Anyways, enjoy. 
 
