@@ -1,40 +1,38 @@
-require("vim.fs")
-vim.loader.enable()
+-- require "vim.fs"
+-- vim.loader.enable()
+vim.o.termguicolors = true
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.g.have_nerd_font = true
 
-require("lazy_boot")
-require("lazy_conf")
-require("options")
-require("keymaps")
-require("config.style")
-require("mini.sessions").setup({
-    autoread = false
-})
-require("mini.notify").setup({
-    window = {
-        winblend = 20
-    }
-})
-vim.notify = require('mini.notify').make_notify()
-require("mini.cursorword").setup()
---require('mini.indentscope').gen_animation.quadratic({ easing = 'out', duration = 1000, unit = 'total' })
---local gen_animation = require('miniindentscope.gen_animation')
-local MiniIndentscope = require('mini.indentscope')
-require("mini.indentscope").setup({
-        draw = {
-          animation = MiniIndentscope.gen_animation.quadratic({ easing = 'out', duration = 480, unit = 'total' }),
-          delay = 0.5,
-        },
-        border = "top",
-       -- symbol = "·",
-       --  symbol = "↓",
-       -- symbol = "􀄩 ",
-       symbol = '•',
-     --   symbol = '・',
-        indent_at_cursor = false, 
-        options = { try_as_border = true },
-})
+require "options"
+
+require "keymaps"
+
+require "lazy-bootstrap"
+
+require "lazy-plugins"
+
+require "config.statusline"
+
+-- require "config.jj"
+
+-- vim.api.nvim_create_autocmd("ColorScheme", {
+-- pattern = "*",
+-- callback = function()
+-- package.loaded["feline"] = nil
+-- package.loaded["catppuccin.groups.integrations.feline"] = nil
+-- require("feline").setup {
+-- components = require("catppuccin.groups.integrations.feline").get(),
+-- }
+-- end,
+-- })
+
+-- vim.api.nvim_create_autocmd("LspAttach", {
+-- callback = function(args)
+-- local client = vim.lsp.get_client_by_id(args.data.client_id)
+-- client.server_capabilities.semanticTokensProvider = nil
+-- end,
+-- });
