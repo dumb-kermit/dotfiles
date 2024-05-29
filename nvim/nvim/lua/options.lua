@@ -56,7 +56,7 @@ vim.opt.inccommand = "nosplit"
 -- Show which line your cursor is onopt
 vim.opt.cursorlineopt = "number"
 vim.opt.cursorline = true
---vim.opt.cursorlineopt = "both"
+vim.opt.cursorlineopt = "both"
 
 -- Minimal number of screen lines to keep above and below the cursor.
 -- Best practice is to keep it middle of the screen always -- actually it can be done by setting an n+x value, where x is higher than total number of lines on the screen at any time;
@@ -94,10 +94,10 @@ vim.opt.showtabline = 1
 vim.opt.signcolumn = "number"
 vim.opt.numberwidth = 1
 -- vim.cmd "set guicursor=a:ver2"
-vim.cmd "set guicursor=a:block"
---vim.cmd "set guicursor=a:hor2"
+-- vim.cmd "set guicursor=a:block"
+vim.cmd "set guicursor=a:hor2"
 
-vim.opt.foldcolumn = "1"
+vim.opt.foldcolumn = "0"
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldenable = true

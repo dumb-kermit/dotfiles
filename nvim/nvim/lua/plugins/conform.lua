@@ -10,7 +10,7 @@ return {
                     require("conform").format { async = true, lsp_fallback = true }
                 end,
                 mode = "",
-                desc = "BUFFR $FORMAT",
+                desc = "BUFFR FORMAT",
             },
         },
         opts = {

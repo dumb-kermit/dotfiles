@@ -120,6 +120,7 @@ return {
         event = "VeryLazy",
         init = function()
             require("mini.cursorword").setup()
+            vim.cmd "hi MiniCursorword cterm=none gui=none guifg=none"
         end,
     },
     {

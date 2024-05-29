@@ -263,13 +263,20 @@ return {
             vim.cmd "highlight MiniDiffSignAdd guifg=#BE95FF"
             vim.cmd "highlight MiniDiffSignChange guifg=#3EDBD9"
             vim.cmd "highlight MiniDiffSignDelete guifg=#EE5396"
-            vim.cmd "hi TelescopeMatching guifg=#FF74B8 guibg=#161616"
-            vim.cmd "hi TelescopeSelection guifg=#FF74B8 guibg=#161616"
-            vim.cmd "hi TelescopeSelectionCaret guifg=#FF74B8 guibg=#161616"
-            vim.cmd "hi TelescopePromptPrefix guifg=#FF74B8"
+            vim.cmd "hi TelescopeMatching guifg=#FF74B8 guibg=#141414"
+            vim.cmd "hi TelescopeSelection guifg=#FF74B8 guibg=#141414"
+            vim.cmd "hi TelescopeSelectionCaret guifg=#FF74B8 guibg=#141414"
+            vim.cmd "hi TelescopePromptPrefix guifg=#FF74B8 guibg=#141414"
             vim.cmd "hi TelescopePromptCounter guifg=#FF74B8"
-            vim.cmd "hi TelescopeResultsTitle guifg=#161616 guibg=#2CF9ED"
-            vim.cmd "hi TelescopePromptTitle guifg=#393939 guibg=#393939"
+            vim.cmd "hi TelescopeResultsTitle guifg=#141414 guibg=#2CF9ED"
+            -- vim.cmd "hi TelescopePromptTitle guifg=#393939 guibg=#393939"
+            vim.cmd "hi TelescopePromptTitle guibg=#141414 guifg=#141414"
+            vim.cmd "hi TelescopePromptBorder guibg=#141414 guifg=#141414"
+            vim.cmd "hi TelescopePromptNormal guibg=#141414"
+            -- vim.cmd "hi WhichkeySeparator guifg=#FF74B8"
+            vim.cmd "hi WhichKeyFloat guibg=#161616"
+            vim.cmd "hi WhichKeyDesc guifg=#C693FF"
+            vim.cmd "hi CursorLineNR guifg=#C693FF"
 
             -- vim.cmd "hi TelescopeSelection guifg=#EE5396 guibg=#161616"
             -- vim.cmd "hi TelescopeSelectionCaret guifg=#EE5396 guibg=#161616"
@@ -923,8 +930,8 @@ return {
     },
     {
         "ellisonleao/gruvbox.nvim",
-        lazy = false,
-        priority = 1000,
+        -- lazy = false,
+        -- priority = 1000,
         opts = {
             terminal_colors = false, -- add neovim terminal colors
             undercurl = false,

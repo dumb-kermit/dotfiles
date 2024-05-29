@@ -51,6 +51,11 @@ map("n", "d", "l", { noremap = true, desc = "JUMP < 3W RIGHT" })
 map("n", "<D-a>", "b", { noremap = true, desc = "JUMP > 3W LEFT" })
 map("n", "<D-d>", "w", { noremap = true, desc = "JUMP < 3W RIGHT" })
 
+map("n", "<S-v>", ":hi MiniCursorword cterm=none gui=none guifg=#FFB600<CR>")
+map("n", "<S-c>", ":hi MiniCursorword cterm=none gui=none guifg=none<CR>")
+-- map("n", "<Opt-Tab>", ":hi MiniCursorword cterm=none gui=none guifg=#FFB600<CR>")
+-- map("n", "<S-Tab>", ":hi MiniCursorword cterm=none gui=none guifg=none<CR>")
+
 --map("n", "w", "3k", { noremap = true, desc = "JUMP 3L UP" })
 --map("n", "s", "3j", { noremap = true, desc = "JUMP 3L DOWN" })
 --map("n", "a", "b", { noremap = true, desc = "JUMP > 3W LEFT" })
@@ -58,26 +63,27 @@ map("n", "<D-d>", "w", { noremap = true, desc = "JUMP < 3W RIGHT" })
 
 map("n", "r", "dw", { desc = "DELETE" })
 map({ "n", "x", "o" }, "<enter>", "<Plug>(leap)", { desc = "LEAP OUT" })
-map("n", "<leader>1", ":bnext<CR>", { desc = "BUFFR $NEXT" })
-map("n", "<leader>2", ":bprev<CR>", { desc = "BUFFR $PREV" })
+map("n", "<leader>1", ":bnext<CR>", { desc = "BUFFR NEXT" })
+map("n", "<leader>2", ":bprev<CR>", { desc = "BUFFR PREV" })
 --map("n", "<D-a>", "<C-w>x", { desc = "BRING $PANES" })
-map("n", "<leader>3", ":bd<CR>", { desc = "BUFFR $EXIT" })
+map("n", "<leader>3", ":bd<CR>", { desc = "BUFFR EXIT" })
 
 --menu--
-map("n", "<leader>d", "<cmd>lua MiniStarter.open()<CR>", { desc = "BRING $DASH" })
+map("n", "<leader>d", "<cmd>lua MiniStarter.open()<CR>", { desc = "BRING DASH" })
 --map("n", "<leader>5", "<cmd>lua MiniSessions.select()<CR>", { desc = "SESSION SELECT" })
-map("n", "<leader>j", "<cmd>lua MiniNotify.show_history()<CR>", { desc = "BRING $HISTORY" })
-map("n", "<S-p>", "<cmd>Lazy profile<CR>", { desc = "BRING $PROFILER" })
-map("n", "<leader>4", "<cmd>Lazy<CR>", { desc = "BRING $LAZY" })
-map("n", "<leader>0", "<cmd>Themer<CR>", { desc = "SCOPE $COLOURS" })
+map("n", "<leader>j", "<cmd>lua MiniNotify.show_history()<CR>", { desc = "BRING HISTORY" })
+map("n", "<S-p>", "<cmd>Lazy profile<CR>", { desc = "BRING PROFILER" })
+map("n", "<leader>4", "<cmd>Lazy<CR>", { desc = "BRING LAZY" })
+map("n", "<leader>0", "<cmd>Themer<CR>", { desc = "SCOPE COLOURS" })
 --map("n", "<leader>Q", "<cmd>quitall!<CR>", { desc = "TOGGLE QUIT" })
 --map("n", "<leader>6", "<cmd>lua MiniSessions.write('ss00')<CR>", { desc = "SESSION SAVE" })
+map("n", "<leader>t", ":Neotree reveal<CR>", { desc = "BRING TREE" })
 
 --telescope--
 map("n", "<leader>h", "<cmd>Telescope help_tags<CR>", { desc = "SCOPE HELP" })
 map("n", "<leader>k", "<cmd>Telescope keymaps<CR>", { desc = "SCOPE KEYMAPS" })
 --map("n", "<leader>", "<cmd>Telescope oldfiles<CR>", { desc = "SCOPE RECENT" })
-map("n", "<leader>?", "<cmd>Telescope commands<CR>", { desc = "SCOPE $OPTS" })
+map("n", "<leader>?", "<cmd>Telescope commands<CR>", { desc = "SCOPE OPTS" })
 --map("n", "<leader><leader>", "<cmd>Telescope buffers<CR>", { desc = "SCOPE BUFFERS" })
 map("n", "<leader>z", function()
     local builtin = require "telescope.builtin"
@@ -111,6 +117,16 @@ vim.api.nvim_set_hl(0, "LeapMatch", {
     bold = true,
     nocombine = true,
 })
+
+-- function cword()
+-- local default_value = {}
+-- local value = vim.inspect(highlight MiniCursorword:get())
+-- if value == "{}" then
+-- vim.cmd "hi MiniCursorword guifg=none cterm=none gui=none" = default_value
+-- else
+-- vim.opt.colorcolumn = {}
+-- end
+-- end
 
 -- Lightspeed colors
 -- primary labels: bg = "#f02077" (light theme) or "#ff2f87"  (dark theme)
@@ -172,40 +188,31 @@ autocmd("User", {
 --	group = group,
 --})
 
-autocmd("FileType", {
-    pattern = {
-        "mini.starter",
-        "alpha",
-        "dashboard",
-        "neo-tree",
-        "telescope",
-        "lazy",
-        "mason",
-        "txt",
-    },
-    callback = function()
-        vim.b.miniindentscope_disable = true
-    end,
-})
+-- autocmd("FileType", {
+-- pattern = {
+-- "mini.starter",
+-- "alpha",
+-- "dashboard",
+-- "neo-tree",
+-- "telescope",
+-- "lazy",
+-- "mason",
+-- "txt",
+-- },
+-- callback = function()
+-- vim.b.miniindentscope_disable = true
+-- end,
+-- })
 
---autocmd('VimEnter', {
---  pattern = { '*' },
---  callback = function()
---    require('mini.pairs').setup()
---    require('mini.cursorword').setup()
---  end,
---  group = group,
---})
-
-autocmd("InsertEnter", {
-    pattern = { "*.py" },
-    callback = function(ev)
-        vim.cmd "LspStart python-lsp-server"
-        -- logic to start lsp server, be sure to not start multiple instances
-        -- at once, check neovim api
-        -- possible command to start server vim.cmd([[ :LspStart bashls ]])
-    end,
-})
+-- autocmd("InsertEnter", {
+-- pattern = { "*.py" },
+-- callback = function(ev)
+-- vim.cmd "LspStart python-lsp-server"
+-- logic to start lsp server, be sure to not start multiple instances
+-- at once, check neovim api
+-- possible command to start server vim.cmd([[ :LspStart bashls ]])
+-- end,
+-- })
 
 -- resize splits if window got resized
 autocmd({ "VimResized" }, {
@@ -216,13 +223,13 @@ autocmd({ "VimResized" }, {
     end,
 })
 
-autocmd({ "ModeChanged" }, {
-    callback = function()
-        LspReferenceText = { bg = "none", italic = true }
-        LspReferenceWrite = { bg = "none", italic = true }
-        LspReferenceRead = { bg = "none", italic = true }
-    end,
-})
+-- autocmd({ "ModeChanged" }, {
+-- callback = function()
+-- LspReferenceText = { bg = "none", italic = true }
+-- LspReferenceWrite = { bg = "none", italic = true }
+-- LspReferenceRead = { bg = "none", italic = true }
+-- end,
+-- })
 
 -- wrap and check for spell in text filetypes
 autocmd("FileType", {

@@ -5,9 +5,14 @@ return {
         keys = {
             {
                 "<leader>b",
-                "<cmd>Telescope file_browser grouped=true hide_parent_dir=true prompt_path=true hidden=true path=%:p:h select_buffer=true<CR>",
+                "<cmd>Telescope file_browser grouped=true hide_parent_dir=true hidden=true path=%:p:h select_buffer=true<CR>",
                 --"<cmd>Telescope file_browser grouped=true hide_parent_dir=true prompt_path=true dir_icon=􀈖  path=%:p:h select_buffer=true<CR>",
-                desc = "SCOPE $FINDER",
+                desc = "SCOPE FINDER",
+            },
+            {
+                "<leader>i",
+                "<cmd>Telescope file_browser theme=ivy grouped=true hide_parent_dir=true prompt_path=true path=%:p:h select_buffer=true<CR>",
+                desc = "SCOPE ULTRAFINDER",
             },
         },
     },
@@ -156,15 +161,15 @@ return {
             require("telescope").load_extension "undo"
 
             local builtin = require "telescope.builtin"
-            vim.keymap.set("n", "<leader>h", "<cmd>Telescope help_tags<CR>", { desc = "SCOPE $HELP" })
-            vim.keymap.set("n", "<leader>k", "<cmd>Telescope keymaps<CR>", { desc = "SCOPE $KEYS" })
-            vim.keymap.set("n", "<leader>s", "<cmd>Telescope<CR>", { desc = "SCOPE $PICKERS" })
-            vim.keymap.set("n", "<leader>w", builtin.grep_string, { desc = "SCOPE $CURWORD" })
-            vim.keymap.set("n", "<leader>a", builtin.diagnostics, { desc = "SCOPE $LSPDIAG" })
-            vim.keymap.set("n", "<leader>c", builtin.marks, { desc = "SCOPE $MARKS" })
-            vim.keymap.set("n", "<leader><tab>", builtin.oldfiles, { desc = "SCOPE $RECENT" })
-            vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>", { desc = "SCOPE $UNDO" })
-            vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "SCOPE $BUFFERS" })
+            vim.keymap.set("n", "<leader>h", "<cmd>Telescope help_tags<CR>", { desc = "SCOPE HELP" })
+            vim.keymap.set("n", "<leader>k", "<cmd>Telescope keymaps<CR>", { desc = "SCOPE KEYS" })
+            vim.keymap.set("n", "<leader>s", "<cmd>Telescope<CR>", { desc = "SCOPE PICKERS" })
+            vim.keymap.set("n", "<leader>w", builtin.grep_string, { desc = "SCOPE CURWORD" })
+            vim.keymap.set("n", "<leader>a", builtin.diagnostics, { desc = "SCOPE LSPDIAG" })
+            vim.keymap.set("n", "<leader>c", builtin.marks, { desc = "SCOPE MARKS" })
+            vim.keymap.set("n", "<leader><tab>", builtin.oldfiles, { desc = "SCOPE RECENT" })
+            vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>", { desc = "SCOPE UNDO" })
+            vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "SCOPE BUFFERS" })
 
             -- Slightly advanced example of overriding default behavior and theme
             vim.keymap.set("n", "<leader>z", function()
@@ -172,7 +177,7 @@ return {
                 builtin.current_buffer_fuzzy_find {
                     winblend = 10,
                 }
-            end, { desc = "SCOPE $FUZZY" })
+            end, { desc = "SCOPE FUZZY" })
 
             -- It's also possible to pass additional configuration options.
             --  See `:help telescope.builtin.live_grep()` for information about particular keys
@@ -181,12 +186,12 @@ return {
                     grep_open_files = true,
                     prompt_title = "Live Grep in Open Files",
                 }
-            end, { desc = "SCOPE $GREP" })
+            end, { desc = "SCOPE GREP" })
 
             -- Shortcut for searching your Neovim configuration files
             vim.keymap.set("n", "<leader>/", function()
                 builtin.find_files { cwd = vim.fn.stdpath "config" }
-            end, { desc = "SCOPE $CONFIG" })
+            end, { desc = "SCOPE CONFIG" })
         end,
     },
 }
